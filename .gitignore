@@ -1,0 +1,4 @@
+# Claves de la red Wi-Fi del Pico (ver pico/secretos_ejemplo.py)
+pico/secretos.py
+__pycache__/
+*.pyc

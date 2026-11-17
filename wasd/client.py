@@ -5,9 +5,14 @@ socket. Protocolo: "vl,vr,sol,rod\n" (vl/vr duty -100..100, sol 0/1,
 rod duty rodillo 0..100).
 """
 
+import os
 import socket
 
-ROBOT_IP = "192.168.4.1"   # IP por defecto del AP de MicroPython
+# IP del robot. Por defecto la del AP de MicroPython (modo "ap" del Pico).
+# En modo "hotspot" usar la IP del Pico en la zona Wi-Fi, por ejemplo:
+#     set FUTBOT_IP=172.20.10.12        (CMD de Windows)
+#     export FUTBOT_IP=172.20.10.12     (Linux / macOS)
+ROBOT_IP = os.environ.get("FUTBOT_IP", "192.168.4.1")
 ROBOT_PORT = 8080
 
 
